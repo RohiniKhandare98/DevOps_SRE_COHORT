@@ -1,0 +1,37 @@
+
+---  Download Go tar file
+	curl -LO https://go.dev/dl/go1.25.0.linux-amd64.tar.gz
+
+
+---  Extract to /usr/local
+
+	sudo tar -C /usr/local/ -xzf go1.26.1.linux-amd64.tar.gz
+
+
+--- Check command status ---- 0 = success
+
+	echo $?
+
+
+---  Check Go version directly
+
+	/usr/local/go/bin/go version
+
+
+---  Make Go available permanently in WSL
+------- Add Go to PATH permanently:
+	
+	echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+        source ~/.bashrc 
+
+------- Then check:
+	go version
+
+----  go build -o hello main.go  
+	-- go build --- compiles go program
+	 -o hello  ---- output binary name will be hello
+	 main.go  ---- source file to compile
+	
+--- After build run like this 
+	./hello 
+

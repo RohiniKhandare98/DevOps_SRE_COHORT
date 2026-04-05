@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/RohiniKhandare98/DevOps_SRE_COHORT/Day_7_Payments/pkg/payments"
-	"github.com/RohiniKhandare98/DevOps_SRE_COHORT/Day_7_Payments/creditcard"
-	"github.com/RohiniKhandare98/DevOps_SRE_COHORT/Day_7_Payments/upi"
+	"github.com/RohiniKhandare98/DevOps_SRE_COHORT/Day_7_Payments/pkg/payments/creditcard"
+	"github.com/RohiniKhandare98/DevOps_SRE_COHORT/Day_7_Payments/pkg/payments/upi"
 )
 
 func Checkout(method payments.PaymentMethod, amount float64) string {
@@ -26,7 +26,7 @@ func main() {
 
 	rohiniCard := creditcard.CreditCardPayment{CardNumber: "1234567890123456", ExpiryDate: "01/2028", CVV: "456"}
 
-	msg = Checkout(shubhamCard, 50)
+	msg = Checkout(rohiniCard, 50)
 
 	fmt.Printf("Payment successful: %s", msg)
 }

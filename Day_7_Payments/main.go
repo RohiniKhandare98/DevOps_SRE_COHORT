@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/shubhamrasal/go-practice/interface-2/pkg/payments"
-	"github.com/shubhamrasal/go-practice/interface-2/pkg/payments/creditcard"
-	"github.com/shubhamrasal/go-practice/interface-2/pkg/payments/upi"
+	"github.com/RohiniKhandare98/DevOps_SRE_COHORT/Day_7_Payments/pkg/payments"
+	"github.com/RohiniKhandare98/DevOps_SRE_COHORT/Day_7_Payments/creditcard"
+	"github.com/RohiniKhandare98/DevOps_SRE_COHORT/Day_7_Payments/upi"
 )
 
 func Checkout(method payments.PaymentMethod, amount float64) string {
@@ -18,15 +18,15 @@ func main() {
 
 	fmt.Println("payment interface example")
 
-	shubhamUPI := upi.UPIPayment{UpiID: "shubham@okicici", App: "Gpay"}
+	rohiniUPI := upi.UPIPayment{UpiID: "rohini@okicici", App: "Gpay"}
 
-	msg := Checkout(shubhamUPI, 24.65)
+	msg := Checkout(rohiniUPI, 50)
 
 	fmt.Printf("Payment successful: %s", msg)
 
-	shubhamCard := creditcard.CreditCardPayment{CardNumber: "1234567890123456", ExpiryDate: "01/2026", CVV: "123"}
+	rohiniCard := creditcard.CreditCardPayment{CardNumber: "1234567890123456", ExpiryDate: "01/2028", CVV: "456"}
 
-	msg = Checkout(shubhamCard, 24.65)
+	msg = Checkout(shubhamCard, 50)
 
 	fmt.Printf("Payment successful: %s", msg)
 }
